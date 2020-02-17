@@ -2,6 +2,8 @@ package com.example.tictaktoe;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         reset.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View v) {
                 btn00.setClickable(true);
@@ -53,6 +56,15 @@ public class MainActivity extends AppCompatActivity {
                 btn20.setClickable(true);
                 btn21.setClickable(true);
                 btn22.setClickable(true);
+                    btn00.setBackgroundResource(R.drawable.btn_ripple);
+                    btn01.setBackgroundResource(R.drawable.btn_ripple);
+                    btn02.setBackgroundResource(R.drawable.btn_ripple);
+                    btn10.setBackgroundResource(R.drawable.btn_ripple);
+                    btn11.setBackgroundResource(R.drawable.btn_ripple);
+                    btn12.setBackgroundResource(R.drawable.btn_ripple);
+                    btn20.setBackgroundResource(R.drawable.btn_ripple);
+                    btn21.setBackgroundResource(R.drawable.btn_ripple);
+                    btn22.setBackgroundResource(R.drawable.btn_ripple);
                 btn00.setText(" ");
                 btn01.setText(" ");
                 btn02.setText(" ");
@@ -170,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
         btn12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btn00.setClickable(false);
+                btn12.setClickable(false);
                 if(count%2==0)
                 {
                     btn12.setText("X");
@@ -247,6 +259,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    @SuppressLint("ResourceAsColor")
     static void method()
     {
         for(int i=0;i<3;i++) {
@@ -256,6 +269,27 @@ public class MainActivity extends AppCompatActivity {
                 else
                     winner_name.setText(player_two.getText().toString());
 
+                if(i==0)
+                {
+
+                    btn00.setBackgroundColor(R.color.colorAccent);
+                    btn01.setBackgroundColor(R.color.colorAccent);
+                    btn02.setBackgroundColor(R.color.colorAccent);
+
+                }
+                if(i==1)
+                {
+                    btn10.setBackgroundColor(R.color.colorAccent);
+                    btn11.setBackgroundColor(R.color.colorAccent);
+                    btn12.setBackgroundColor(R.color.colorAccent);
+                }
+                if(i==2)
+                {
+
+                    btn20.setBackgroundColor(R.color.colorAccent);
+                    btn21.setBackgroundColor(R.color.colorAccent);
+                    btn22.setBackgroundColor(R.color.colorAccent);
+                }
                 btn00.setClickable(false);
                 btn01.setClickable(false);
                 btn02.setClickable(false);
@@ -273,6 +307,29 @@ public class MainActivity extends AppCompatActivity {
                     winner_name.setText(player_one.getText().toString());
                 else
                     winner_name.setText(player_two.getText().toString());
+
+                if(i==0)
+                {
+
+                    btn00.setBackgroundColor(R.color.colorAccent);
+                    btn10.setBackgroundColor(R.color.colorAccent);
+                    btn20.setBackgroundColor(R.color.colorAccent);
+
+                }
+                if(i==1)
+                {
+                    btn01.setBackgroundColor(R.color.colorAccent);
+                    btn11.setBackgroundColor(R.color.colorAccent);
+                    btn21.setBackgroundColor(R.color.colorAccent);
+                }
+                if(i==2)
+                {
+
+                    btn02.setBackgroundColor(R.color.colorAccent);
+                    btn12.setBackgroundColor(R.color.colorAccent);
+                    btn22.setBackgroundColor(R.color.colorAccent);
+                }
+
                 btn00.setClickable(false);
                 btn01.setClickable(false);
                 btn02.setClickable(false);
@@ -291,6 +348,9 @@ public class MainActivity extends AppCompatActivity {
                 winner_name.setText(player_one.getText().toString());
             else
                 winner_name.setText(player_two.getText().toString());
+            btn00.setBackgroundColor(R.color.colorAccent);
+            btn11.setBackgroundColor(R.color.colorAccent);
+            btn22.setBackgroundColor(R.color.colorAccent);
             btn00.setClickable(false);
             btn01.setClickable(false);
             btn02.setClickable(false);
@@ -307,6 +367,9 @@ public class MainActivity extends AppCompatActivity {
                 winner_name.setText(player_one.getText().toString());
             else
                 winner_name.setText(player_two.getText().toString());
+            btn02.setBackgroundColor(R.color.colorAccent);
+            btn11.setBackgroundColor(R.color.colorAccent);
+            btn20.setBackgroundColor(R.color.colorAccent);
             btn00.setClickable(false);
             btn01.setClickable(false);
             btn02.setClickable(false);
